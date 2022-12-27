@@ -61,7 +61,7 @@
                                     <action selector="btn_calcular:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H8H-ab-TQ2"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JF-Xd-sh4">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JF-Xd-sh4">
                                 <rect key="frame" x="0.0" y="259" width="320" height="309"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seu índice de massa corporal é: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pe4-83-TJf">
@@ -134,9 +134,10 @@
                     </view>
                     <connections>
                         <outlet property="img_resultado" destination="1Xj-lJ-JF3" id="nU7-Yj-37G"/>
-                        <outlet property="nr_altura" destination="U0T-Uc-npc" id="Ybf-ve-OpZ"/>
-                        <outlet property="nr_peso" destination="U0T-Uc-npc" id="gpQ-jr-kbj"/>
+                        <outlet property="tf_nr_altura" destination="U0T-Uc-npc" id="Ybf-ve-OpZ"/>
+                        <outlet property="tf_nr_peso" destination="U0T-Uc-npc" id="gpQ-jr-kbj"/>
                         <outlet property="txt_resultado" destination="BD9-I2-XKa" id="wQV-uc-lTV"/>
+                        <outlet property="view_resultado" destination="5JF-Xd-sh4" id="Dt3-Ea-JpQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
