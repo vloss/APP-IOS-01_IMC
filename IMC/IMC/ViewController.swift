@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+   
     @IBOutlet weak var tf_nr_peso: UITextField!
     @IBOutlet weak var tf_nr_altura: UITextField!
     @IBOutlet weak var txt_resultado: UILabel!
@@ -21,17 +22,33 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
     @IBAction func btn_calcular(_ sender: Any) {
         
-        if let PESO = Double(tf_nr_altura.text!), let ALTURA = Double(tf_nr_peso.text!){
+        print(tf_nr_peso.text!)
+        print(tf_nr_altura.text!)
+        
+        if let PESO = Double(tf_nr_peso.text!), let ALTURA = Double(tf_nr_altura.text!){
             imc = PESO / (ALTURA * ALTURA)
             
+            print("PESO: ")
+            print(PESO)
+            print("ALTURA: ")
+            print(ALTURA)
             showResultado()
         }
     }
     
     func showResultado(){
+    
+        print("IMC: ")
+        print(imc)
+
+        
         var TXT_RESULTADO: String = ""
         var IMG_RESULTADO: String = ""
         
@@ -57,9 +74,11 @@ class ViewController: UIViewController {
                 IMG_RESULTADO = "obesidade"
         }
         
-        txt_resultado.text = TXT_RESULTADO
+        txt_resultado.text = "\(Int(imc)): \(TXT_RESULTADO)"
         img_resultado.image = UIImage(named: IMG_RESULTADO)
         view_resultado.isHidden = false
+        
+        view.endEditing(true)
     }
     
 }
